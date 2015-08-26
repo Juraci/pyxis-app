@@ -4,15 +4,7 @@
   <body>
     <h1>hello</h1>
 
-    <div ng-controller="RunController">
-      <h2>Runs</h2>
-      <ul>
-        <li ng-repeat="run in runs">
-        <div>{{ run.id }}</div>
-        <div>{{ run.success_percentage }}</div>
-        </li>
-      </ul>
-    </div>
+    <div ng-view />
 
     <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
     <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
