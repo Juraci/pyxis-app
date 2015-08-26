@@ -1,0 +1,19 @@
+{
+  "name": "vizui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.4",
+    "angular-route": "^1.4.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.2"
+  }
+}
