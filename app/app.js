@@ -1,11 +1,11 @@
 'use strict'
 
-var vizuiApp = angular.module('vizuiApp', [
+var pyxisApp = angular.module('pyxisApp', [
     'ngRoute',
     'runs'
 ]);
 
-vizuiApp.config(['$routeProvider', function($routeProvider) {
+pyxisApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/runs', {
       templateUrl: 'runs/runsView.html',
