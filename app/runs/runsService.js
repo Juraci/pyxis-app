@@ -6,6 +6,6 @@ runServices.factory('Runs', ['$resource', function($resource) {
   return $resource(
     'http://localhost:5000/runs',
     {},
-    {query: {method: 'GET', headers: {"Access-Control-Allow-Origin": "*"}}}
+    {query: {method: 'GET'}}
   );
 }]);
