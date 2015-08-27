@@ -2,7 +2,9 @@
 
 var pyxisApp = angular.module('pyxisApp', [
     'ngRoute',
-    'runs'
+    'ngResource',
+    'runsServices',
+    'runsControllers'
 ]);
 
 pyxisApp.config(['$routeProvider', function($routeProvider) {

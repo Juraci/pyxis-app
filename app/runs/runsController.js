@@ -1,10 +1,7 @@
 'use strict'
 
-var runController = angular.module('runs', []);
+var runController = angular.module('runsControllers', ['runsServices']);
 
-runController.controller('RunController', ['$scope', function($scope) {
-  $scope.runs = [
-    {'id': '1', 'success_percentage': 90},
-    {'id': '2', 'success_percentage': 92}
-  ];
+runController.controller('RunController', ['$scope', 'Runs', function($scope, Runs) {
+  $scope.runs = Runs.query();
 }]);
