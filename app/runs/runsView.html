@@ -2,11 +2,16 @@
   <h2>Runs</h2>
   <ul class="runs-list">
     <li ng-repeat="run in runs.runs" class="run-item">
-    <div class="run-id">{{ run.id }}</div>
-    <div class="run-success-percentage">{{ run.success_percentage }}</div>
-    <div class="run-fails">{{ run.fails }}</div>
-    <div class="run-passes">{{ run.passes }}</div>
-    <div class="run-skips">{{ run.skips }}</div>
+    <div class="name">{{ run.id }}</div>
+    <div class="success-wrapper">
+      <div class="run-success-percentage">{{ run.success_percentage }}</div>
+      <div class="text">success rate</div>
+    </div>
+    <div class="results">
+      <div class="run-fails">{{ run.fails }}</div>
+      <div class="run-passes">{{ run.passes }}</div>
+      <div class="run-skips">{{ run.skips }}</div>
+    </div>
     </li>
   </ul>
 </div>

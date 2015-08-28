@@ -21,7 +21,7 @@ describe('pyxis app', function() {
 
   it('has the basic info about a given run', function() {
     browser.get('http://localhost:3000/app/index.html');
-    expect(element(by.css('.run-id')).getText()).toEqual('1');
+    expect(element(by.css('.name')).getText()).toEqual('1');
     expect(element(by.css('.run-success-percentage')).getText()).toEqual('100');
     expect(element(by.css('.run-fails')).getText()).toEqual('2');
     expect(element(by.css('.run-passes')).getText()).toEqual('8');
