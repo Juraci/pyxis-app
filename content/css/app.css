@@ -20,6 +20,8 @@ ol {
   margin-top: 12px;
   padding: 35px;
   text-align: center;
+  background-color: #f1f1f1;
+  border: 1px solid #dfdfdf;
 }
 
 .run-item .name {
@@ -41,8 +43,18 @@ ol {
 .run-item .results {
   display: inline-block;
   vertical-align: middle;
+  text-align: left;
   width: 30%;
   margin: 5px;
+}
+
+.run-item .results-column {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.run-item .right div {
+  text-align: right;
 }
 
 .run-item .run-success-percentage {
