@@ -46,11 +46,13 @@ ol {
   text-align: left;
   width: 30%;
   margin: 5px;
+  position: relative;
 }
 
 .run-item .results-column {
   display: inline-block;
   vertical-align: middle;
+  width: 40%;
 }
 
 .run-item .right div {
