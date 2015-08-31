@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/protractor/bin/protractor protractor-conf.js",
     "start": "browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js, generated/css/*.css\"",
-    "sass": "node-sass content/css/*.scss generated/css/app.css"
+    "scss": "node-sass content/css/*.scss generated/css/app.css"
   },
   "author": "",
   "license": "ISC",

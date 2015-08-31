@@ -22,47 +22,47 @@ ol {
   text-align: center;
   background-color: #f1f1f1;
   border: 1px solid #dfdfdf;
-}
 
-.run-item .name {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  width: 30%;
-  margin: 5px;
-}
+    .name {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+      width: 30%;
+      margin: 5px;
+    }
 
-.run-item .success-wrapper {
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  width: 30%;
-  margin: 5px;
-}
+  .success-wrapper {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    margin: 5px;
+  }
 
-.run-item .results {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  width: 30%;
-  margin: 5px;
-  position: relative;
-}
+  .results {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    width: 30%;
+    margin: 5px;
+    position: relative;
+  }
 
-.run-item .results-column {
-  display: inline-block;
-  vertical-align: middle;
-  width: 40%;
-}
+  .results-column {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40%;
+  }
 
-.run-item .right div {
-  text-align: right;
-}
+  .right div {
+    text-align: right;
+  }
 
-.run-item .run-success-percentage {
-  font-size: 2.4em;
-}
+  .run-success-percentage {
+    font-size: 2.4em;
+  }
 
-.run-item .text {
-  font-size: 0.6em;
+  .text {
+    font-size: 0.6em;
+  }
 }
