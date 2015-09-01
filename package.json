@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/protractor/bin/protractor tests/e2e/protractor-conf.js",
+    "test": "karma start tests/unit/karma.conf.js --single-run && protractor tests/e2e/protractor-conf.js",
     "start": "npm run generate-css && browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js, generated/css/*.css\"",
     "generate-css": "node-sass content/css/ -o generated/css/",
     "watch-css": "nodemon -e scss -x 'npm run generate-css'"
@@ -20,6 +20,9 @@
     "angular-mocks": "^1.4.4",
     "browser-sync": "^2.8.2",
     "httpbackend": "^1.2.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
     "node-sass": "^3.3.2",
     "nodemon": "^1.4.1",
     "protractor": "^2.2.0"
