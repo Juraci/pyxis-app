@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/protractor/bin/protractor protractor-conf.js",
     "start": "browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js, generated/css/*.css\"",
-    "scss": "node-sass content/css/*.scss generated/css/app.css"
+    "generate-css": "node-sass content/css/*.scss generated/css/app.css",
+    "watch-css": "nodemon -e scss -x 'npm run generate-css'"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "browser-sync": "^2.8.2",
     "httpbackend": "^1.2.1",
     "node-sass": "^3.3.2",
+    "nodemon": "^1.4.1",
     "protractor": "^2.2.0"
   }
 }
