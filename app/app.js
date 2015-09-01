@@ -9,11 +9,11 @@ var pyxisApp = angular.module('pyxisApp', [
 
 pyxisApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    .when('/', {
+      redirectTo: '/runs'
+    })
     .when('/runs', {
       templateUrl: 'runs/runsView.html',
       controller: 'RunController'
-    })
-    .otherwise({
-      redirectTo: '/runs'
     });
 }]);
