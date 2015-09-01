@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/protractor/bin/protractor protractor-conf.js",
     "start": "browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js, generated/css/*.css\"",
-    "generate-css": "node-sass content/css/*.scss generated/css/app.css",
+    "generate-css": "node-sass content/css/ -o generated/css/",
     "watch-css": "nodemon -e scss -x 'npm run generate-css'"
   },
   "author": "",
