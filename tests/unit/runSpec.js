@@ -1,6 +1,6 @@
 describe('RunController', function() {
 
-  var singleRun = {id: '1234'};
+  var singleRun = {runs: [{id: '1234'}]};
 
   beforeEach(module('pyxisApp'));
 
@@ -13,13 +13,13 @@ describe('RunController', function() {
 
   it('list runs', function() {
     var scope = {};
-    $httpBackend.expectGET('http://localhost:5000/runs').respond({
-      runs: [singleRun]
+    $httpBackend.expectGET(/(.)*\/runs$/).respond(function() {
+      return [200, singleRun, {}];
     });
 
     var controller = $controller('RunController', {$scope: scope});
     $httpBackend.flush();
 
-    expect(scope.runs.runs).toEqual([singleRun]);
+    expect(scope.runs).toEqual([{id: '1234'}]);
   });
 });
