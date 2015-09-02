@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start tests/unit/karma.conf.js --single-run && protractor tests/e2e/protractor-conf.js",
+    "test": "npm run karma && npm run protractor",
+    "karma": "karma start tests/unit/karma.conf.js --single-run",
+    "protractor": "protractor tests/e2e/protractor-conf.js",
     "start": "npm run generate-css && browser-sync start --server --files \"app/index.html, app/*.js, runs/*.js, generated/css/*.css\"",
     "generate-css": "node-sass content/css/ -o generated/css/",
     "watch-css": "nodemon -e scss -x 'npm run generate-css'"
