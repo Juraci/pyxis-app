@@ -2,7 +2,7 @@
 
 var runController = angular.module('runsControllers', ['runsServices']);
 
-runController.controller('RunController', ['$scope', 'Runs', function($scope, Runs) {
+runController.controller('RunController', ['$scope', 'Runs', '$location', '$anchorScroll', function($scope, Runs, $location, $anchorScroll) {
   Runs.query(function(result) {
     $scope.runs = result.runs;
     $scope.pagination = result.meta;
@@ -15,5 +15,8 @@ runController.controller('RunController', ['$scope', 'Runs', function($scope, Ru
       $scope.runs = result.runs;
       $scope.pagination = result.meta;
     });
-  }
+
+    $location.hash('page-title');
+    $anchorScroll();
+  };
 }]);
