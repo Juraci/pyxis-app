@@ -43,7 +43,8 @@ describe('pagination', function() {
           runs: [{ids: '1'}],
           meta: {
             limit: 20,
-            offset: 0
+            offset: 0,
+            total_count: 102
           }
         };
 
@@ -61,7 +62,8 @@ describe('pagination', function() {
         runs: [{id: '1'}, {id: '2'}],
         meta: {
           offset: 20,
-          limit: 20
+          limit: 20,
+          total_count: 102
         }
       };
 
@@ -78,7 +80,14 @@ describe('pagination', function() {
         expect(scope.runs).toEqual( twoRunsWithPagination.runs );
       });
 
-      it('updates the pagination info', function() {
+      it ('updates the current page number', function() {
+        scope.next();
+        $httpBackend.flush();
+
+        expect(scope.currentPage).toBe(2);
+      });
+
+      it('updates the internal pagination info', function() {
         expect(scope.pagination.offset).toBe(0);
 
         scope.next();
