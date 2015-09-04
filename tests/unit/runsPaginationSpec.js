@@ -60,11 +60,13 @@ describe('pagination', function() {
         }
       };
 
-      it('loads the second page', function() {
-        $httpBackend.expectGET("http://localhost:5000" + scope.pagination.next).respond(function() {
+      beforeEach(function() {
+        $httpBackend.expectGET("http://localhost:5000/runs?limit=20&offset=20").respond(function() {
           return [200, twoRunsWithPagination, {}];
         });
+      });
 
+      it('loads the second page', function() {
         scope.next();
         $httpBackend.flush();
 
@@ -73,10 +75,6 @@ describe('pagination', function() {
 
       it('updates the pagination info', function() {
         expect(scope.pagination.offset).toBe(0);
-
-        $httpBackend.expectGET("http://localhost:5000" + scope.pagination.next).respond(function() {
-          return [200, twoRunsWithPagination, {}];
-        });
 
         scope.next();
         $httpBackend.flush();
