@@ -6,6 +6,7 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
   Runs.query(function(result) {
     $scope.runs = result.runs;
     $scope.pagination = result.meta;
+    $scope.currentPage = (result.meta.offset / result.meta.limit) + 1;
   });
 
   $scope.next = function() {
