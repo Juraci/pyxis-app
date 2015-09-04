@@ -7,6 +7,12 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
     $scope.runs = result.runs;
     $scope.pagination = result.meta;
     $scope.currentPage = (result.meta.offset / result.meta.limit) + 1;
+
+    var pages = parseInt(result.meta.total_count / result.meta.limit);
+    if (result.meta.total_count % result.meta.limit > 0) {
+      pages += 1;
+    }
+    $scope.totalPages = pages;
   });
 
   $scope.next = function() {

@@ -15,7 +15,8 @@ describe('pagination', function() {
           runs: [{ids: '1'}],
           meta: {
             limit: 20,
-            offset: 0
+            offset: 0,
+            total_count: 102
           }
         };
 
@@ -29,6 +30,10 @@ describe('pagination', function() {
 
     it('says you are at the first page', function() {
       expect(scope.currentPage).toBe(1);
+    });
+
+    it('counts total pages', function() {
+      expect(scope.totalPages).toBe(6);
     });
   });
 
