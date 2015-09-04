@@ -3,8 +3,8 @@
 var runController = angular.module('runsControllers', ['runsServices']);
 
 runController.controller('RunController', ['$scope', 'Runs', '$location', '$anchorScroll', function($scope, Runs, $location, $anchorScroll) {
-  Runs.query(function(result) {
-    $scope.runs = result.runs;
+
+  var updatePagination = function(result) {
     $scope.pagination = result.meta;
     $scope.currentPage = (result.meta.offset / result.meta.limit) + 1;
 
@@ -13,6 +13,11 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
       pages += 1;
     }
     $scope.totalPages = pages;
+  };
+
+  Runs.query(function(result) {
+    $scope.runs = result.runs;
+    updatePagination(result);
   });
 
   $scope.next = function() {
@@ -20,8 +25,7 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
     var offset = $scope.pagination.offset + limit;
     Runs.query({limit: limit, offset: offset}, function(result) {
       $scope.runs = result.runs;
-      $scope.pagination = result.meta;
-      $scope.currentPage = (result.meta.offset / result.meta.limit) + 1;
+      updatePagination(result);
     });
 
     $location.hash('page-title');
