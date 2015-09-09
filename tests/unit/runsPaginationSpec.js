@@ -97,4 +97,48 @@ describe('pagination', function() {
       });
     });
   });
+
+  describe('the second page is loaded', function() {
+    var scope = {},
+        secondPage = {
+          runs: [{ids: '2'}],
+          meta: {
+            limit: 20,
+            offset: 20,
+            total_count: 102
+          }
+        };
+
+    beforeEach(function() {
+      $httpBackend.expectGET(/(.)*\/runs$/).respond(function() {
+        return [200, secondPage, {}];
+      });
+      controller = $controller('RunController', {$scope: scope});
+      $httpBackend.flush();
+    });
+
+    describe('when I click previous page', function() {
+      var firstPage = {
+        runs: [{id: '1'}],
+        meta: {
+          offset: 0,
+          limit: 20,
+          total_count: 102
+        }
+      };
+
+      beforeEach(function() {
+        $httpBackend.expectGET("http://localhost:5000/runs?limit=20&offset=0").respond(function() {
+          return [200, firstPage, {}];
+        });
+      });
+
+      it('loads the second page', function() {
+        scope.prev();
+        $httpBackend.flush();
+
+        expect(scope.runs).toEqual( firstPage.runs );
+      });
+    });
+  });
 });

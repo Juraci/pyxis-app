@@ -31,4 +31,16 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
     $location.hash('page-title');
     $anchorScroll();
   };
+
+  $scope.prev = function() {
+    var limit = $scope.pagination.limit;
+    var offset = $scope.pagination.offset - limit;
+    Runs.query({limit: limit, offset: offset}, function(result) {
+      $scope.runs = result.runs;
+      updatePagination(result);
+    });
+
+    $location.hash('page-title');
+    $anchorScroll();
+  };
 }]);
