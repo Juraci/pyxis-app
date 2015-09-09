@@ -1,12 +1,15 @@
 .pagination {
 
   div {
-    display: inline-block;
   }
 
   .pagination-status {
+    display: inline-block;
+    width: 50%;
   }
 
   .pagination-control {
+    display: inline-block;
+    width: 50%;
   }
 }
