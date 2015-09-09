@@ -15,14 +15,7 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
     $scope.totalPages = pages;
   };
 
-  Runs.query(function(result) {
-    $scope.runs = result.runs;
-    updatePagination(result);
-  });
-
-  $scope.next = function() {
-    var limit = $scope.pagination.limit;
-    var offset = $scope.pagination.offset + limit;
+  var queryAndUpdate = function(limit, offset) {
     Runs.query({limit: limit, offset: offset}, function(result) {
       $scope.runs = result.runs;
       updatePagination(result);
@@ -32,15 +25,20 @@ runController.controller('RunController', ['$scope', 'Runs', '$location', '$anch
     $anchorScroll();
   };
 
+  Runs.query(function(result) {
+    $scope.runs = result.runs;
+    updatePagination(result);
+  });
+
+  $scope.next = function() {
+    var limit = $scope.pagination.limit;
+    var offset = $scope.pagination.offset + limit;
+    queryAndUpdate(limit, offset);
+  };
+
   $scope.prev = function() {
     var limit = $scope.pagination.limit;
     var offset = $scope.pagination.offset - limit;
-    Runs.query({limit: limit, offset: offset}, function(result) {
-      $scope.runs = result.runs;
-      updatePagination(result);
-    });
-
-    $location.hash('page-title');
-    $anchorScroll();
+    queryAndUpdate(limit, offset);
   };
 }]);
