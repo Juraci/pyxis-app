@@ -55,12 +55,14 @@ describe('pyxis app', function() {
 
     it('allows to go to the next page', function() {
       browser.get('http://localhost:3000/app/index.html');
-      expect(element(by.css('.pagination-control .next')).isDisplayed()).toBe(true);
+      expect(element.all(by.css('.pagination-control .next')).first().isDisplayed()).toBe(true);
+      expect(element.all(by.css('.pagination-control .next')).get(1).isDisplayed()).toBe(true);
     });
 
     it('is not possible to go to the previous page', function() {
       browser.get('http://localhost:3000/app/index.html');
-      expect(element(by.css('.pagination-control .previous')).isDisplayed()).toBe(false);
+      expect(element.all(by.css('.pagination-control .previous')).first().isDisplayed()).toBe(false);
+      expect(element.all(by.css('.pagination-control .previous')).get(1).isDisplayed()).toBe(false);
     });
   });
 
@@ -91,12 +93,14 @@ describe('pyxis app', function() {
 
     it('does not have next page', function() {
       browser.get('http://localhost:3000/app/index.html');
-      expect(element(by.css('.pagination-control .next')).isDisplayed()).toBe(false);
+      expect(element.all(by.css('.pagination-control .next')).first().isDisplayed()).toBe(false);
+      expect(element.all(by.css('.pagination-control .next')).get(1).isDisplayed()).toBe(false);
     });
 
     it('has previous page', function() {
       browser.get('http://localhost:3000/app/index.html');
-      expect(element(by.css('.pagination-control .previous')).isDisplayed()).toBe(true);
+      expect(element.all(by.css('.pagination-control .previous')).first().isDisplayed()).toBe(true);
+      expect(element.all(by.css('.pagination-control .previous')).get(1).isDisplayed()).toBe(true);
     });
   });
 });
