@@ -29,8 +29,11 @@
       </div>
     </li>
   </ul>
-  <div class="pagination-control">
-    <div class="previous" ng-show="currentPage > 1"><a href="" ng-click="prev()" >previous</a></div>
-    <div class="next" ng-show="currentPage != totalPages"><a href="" ng-click="next()" >next</a></div>
+
+  <div class="pagination" ng-show="runs">
+    <div class="pagination-control">
+      <div class="previous" ng-show="currentPage > 1"><a href="" ng-click="prev()" >previous</a></div>
+      <div class="next" ng-show="currentPage != totalPages"><a href="" ng-click="next()" >next</a></div>
+    </div>
   </div>
 </div>

@@ -1,15 +1,25 @@
 .pagination {
+  position: relative;
+  height: 20px;
 
   div {
   }
 
   .pagination-status {
+    position: absolute;
     display: inline-block;
-    width: 50%;
+    top: 0;
+    left: 0;
   }
 
   .pagination-control {
+    position: absolute;
     display: inline-block;
-    width: 50%;
+    top: 0;
+    right: 0;
+
+    div {
+      display: inline-block;
+    }
   }
 }
