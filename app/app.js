@@ -1,5 +1,12 @@
 'use strict'
 
+var angular = require('angular');
+require('angular-route');
+require('angular-resource');
+
+require('./runs/runsService.js');
+require('./runs/runsController.js');
+
 var pyxisApp = angular.module('pyxisApp', [
     'ngRoute',
     'ngResource',

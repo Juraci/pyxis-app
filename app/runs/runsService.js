@@ -1,5 +1,7 @@
 'use strict'
 
+var angular = require('angular');
+
 var runServices = angular.module('runsServices', ['ngResource']);
 
 runServices.factory('Runs', ['$resource', function($resource) {
@@ -9,3 +11,5 @@ runServices.factory('Runs', ['$resource', function($resource) {
     {query: {method: 'GET'}}
   );
 }]);
+
+module.exports = runServices;
