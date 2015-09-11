@@ -1,3 +1,6 @@
+require('../../app/app.js')
+require('angular-mocks');
+
 describe('RunController', function() {
 
   var singleRun = {
@@ -8,7 +11,7 @@ describe('RunController', function() {
     }
   };
 
-  beforeEach(module('pyxisApp'));
+  beforeEach(angular.mock.module('pyxisApp'));
 
   var $controller, $httpBackend;
 

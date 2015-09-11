@@ -1,5 +1,8 @@
+require('../../app/app.js')
+require('angular-mocks');
+
 describe('pagination', function() {
-  beforeEach(module('pyxisApp'));
+  beforeEach(angular.mock.module('pyxisApp'));
 
   var $controller, $httpBackend;
 
