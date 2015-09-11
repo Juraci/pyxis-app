@@ -3,6 +3,7 @@
 var angular = require('angular');
 require('angular-route');
 require('angular-resource');
+require('angular-mocks');
 
 require('./runs/runsService.js');
 require('./runs/runsController.js');
